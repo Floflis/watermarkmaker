@@ -3,6 +3,7 @@
 . /usr/lib/floflis/./config
 
 if [ ! -f ../watermark_template.png ]; then convert -size 511x81 xc:transparent ../watermark_template.png; fi
+#- from https://stackoverflow.com/a/39504523/5623661
 
 convert ../watermark_template.png -size 511x81 \
   \( xc:transparent -font "Arial" -pointsize 20 -fill black -draw "text 40,35 '$osname $osversion Insider Preview'" -blur 0x1 \) \
